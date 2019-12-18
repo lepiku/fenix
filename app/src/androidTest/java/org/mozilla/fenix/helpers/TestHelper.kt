@@ -48,6 +48,13 @@ object TestHelper {
         editor.apply()
     }
 
+    fun restartApp(activity: HomeActivityTestRule) {
+        with(activity) {
+            finishActivity()
+            launchActivity(null)
+        }
+    }
+
     fun getPermissionAllowID(): String {
         return when
             (Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
